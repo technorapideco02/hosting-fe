@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  /* Add dark mode base colors */
+  --color-dark-900: #0f172a;
+  --color-dark-800: #1e293b;
+  --color-dark-700: #334155;
+  --color-dark-600: #475569;
+}
+
+body {
+  @apply bg-dark-900 text-slate-100 antialiased selection:bg-brand-500 selection:text-white font-sans;
+}
+
+/* Glassmorphism utilities */
+.glass {
+  @apply bg-dark-800/80 backdrop-blur-md border border-dark-700;
+}
+
+.glass-panel {
+  @apply bg-dark-800/50 backdrop-blur-lg border border-dark-700 shadow-xl rounded-xl;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Transitions */
+.transition-all-fast {
+  @apply transition-all duration-200 ease-in-out;
+}
