@@ -21,8 +21,9 @@ jobs:
           key: ${{ secrets.VM_SSH_KEY }}
           script: |
             # Pull the latest changes from GitHub
-            cd frontend_folder_name_on_vm
+            cd hosting-fe
             git pull origin main
             
-            # Rebuild and restart both frontend and backend infrastructure via Docker Compose
+            # Navigate to backend to trigger orchestrated rebuild
+            cd ../hosting-be
             docker-compose up -d --build
